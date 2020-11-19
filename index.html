@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DEX Aggregator - 1inch.exchange</title>
+    <script>
+        document.write('<base href="' + encodeURI(window.location.pathname) + '"/>');
+    </script>
+
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="assets/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="assets/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="assets/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link color="#5bbad5" href="assets/favicon/safari-pinned-tab.svg" rel="mask-icon">
+    <meta content="#da532c" name="msapplication-TileColor">
+    <meta content="#ffffff" name="theme-color">
+
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+
+    <meta content="DEX aggregator with the best prices on the market. Uniswap Exchange, Kyber Network, Balancer, Bancor, 0x protocol, curve.fi" name="description">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        html {
+            background: #0E121A;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #0E131D 0%, #060A10 30.65%);
+        }
+
+        .spinner {
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            width: 50%;
+            height: 50%;
+            background: url('assets/images/loading-logo.svg') no-repeat center center;
+            background-size: contain;
+            -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+            animation: sk-bounce 2.0s infinite ease-in-out;
+            -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+        }
+
+        @-webkit-keyframes sk-bounce {
+            0%,
+            100% {
+                -webkit-transform: scale(0.9)
+            }
+            50% {
+                -webkit-transform: scale(1.0)
+            }
+        }
+
+        @keyframes sk-bounce {
+            0%,
+            100% {
+                transform: scale(0.9);
+                -webkit-transform: scale(0.9);
+            }
+            50% {
+                transform: scale(1.0);
+                -webkit-transform: scale(1.0);
+            }
+        }
+
+        .spinner-box {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            top: 0;
+            z-index: 99999;
+            background: url('assets/images/loading-background.png') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.assets/images/loading-background.png', sizingMethod='scale');
+            -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/images/loading-background.png', sizingMethod='scale')";
+            animation: bg-animation 3s linear infinite;
+        }
+
+        @keyframes bg-animation {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(-0.3%, -0.3%);
+            }
+            50% {
+                transform: translate(-0.3%, 0.3%);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+    </style>
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#1976d2">
+    <link rel="stylesheet" href="styles.36d87710c181154f2034.css">
+</head>
+
+<body id="body">
+    <div class="body-scroll">
+        <app-root class="h-full">
+            <div class="spinner-box">
+                <div class="spinner"></div>
+            </div>
+        </app-root>
+    </div>
+    <script>
+        window.intercomSettings = {
+            app_id: "zgn72x6y"
+        };
+        (function() {
+            var w = window;
+            var ic = w.Intercom;
+            if (typeof ic === "function") {
+                ic('reattach_activator');
+                ic('update', w.intercomSettings);
+            } else {
+                var d = document;
+                var i = function() {
+                    i.c(arguments);
+                };
+                i.q = [];
+                i.c = function(args) {
+                    i.q.push(args);
+                };
+                w.Intercom = i;
+                var l = function() {
+                    var s = d.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = 'https://widget.intercom.io/widget/zgn72x6y';
+                    var x = d.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                };
+                if (w.attachEvent) {
+                    w.attachEvent('onload', l);
+                } else {
+                    w.addEventListener('load', l, false);
+                }
+            }
+        })();
+
+        var intervalId = setInterval(() => {
+            var iframe = document.querySelector('.intercom-launcher-frame');
+
+            if (!iframe) {
+                return;
+            }
+
+            var style = document.createElement('style');
+            style.textContent = `@media (max-width: 720px) {
+                .intercom-launcher {
+                    width: auto !important;
+                    height: auto !important;
+                    right: 0;
+                    bottom: 0;
+                }
+            }`;
+            iframe.contentDocument.head.appendChild(style);
+            clearInterval(intervalId);
+        }, 500)
+    </script>
+    <script src="runtime.0824cc72a1281011b185.js" defer></script>
+    <script src="polyfills.de356df94d09f43e59c8.js" defer></script>
+    <script src="main.1702e65bab25811b95cd.js" defer></script>
+</body>
+
+</html>
